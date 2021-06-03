@@ -1,7 +1,7 @@
 valor_anterior = 0;
 valor = 0;
 operacion_actual = 0;
-var signos = ["+", "-", "*", "/", "%", "^", " yroot ", "logbase", "mod"];
+var signos = ["+", "-", "*", "/", "%", "^", " yroot ", "logbase", "mod", "e"];
 var botones_ocultos = false;
 
 function rescatar() {
@@ -18,11 +18,11 @@ function add(numero) {
   } else $("#pantalla").html(numero);
 }
 
-function ponepi() {
+function pi() {
   $("#pantalla").html(Math.PI);
 }
 function euler() {
-  $("#pantalla").html(Math.PI);
+  $("#pantalla").html(Math.E);
 }
 function borrar_ultimo() {
   $("#pantalla").html(
@@ -143,12 +143,28 @@ function fluctua() {
   } else botones_ocultos = false;
 }
 
+function expo() {
+  rescatar();
+  valor_anterior = valor;
+  valor = 0;
+  operacion_actual = 10;
+  imprimir(0);
+}
+
 function suma() {
   rescatar();
   valor_anterior = valor;
   valor = 0;
   operacion_actual = 1;
   imprimir(0);
+}
+
+function mod() {
+  rescatar();
+  valor_anterior = valor;
+  valor = 0;
+  operacion_actual = 1;
+  imprimir(9);
 }
 
 function resta() {
@@ -282,6 +298,14 @@ function igual() {
       //logaritmo base
       valor = Math.log(val) / Math.log(valor_anterior);
       break;
+    case 9:
+      //Modulo
+      valor = valor = valor_anterior % valor;
+      break;
+    case 10:
+      //e
+      valor = valor = valor_anterior * Math.pow(10, valor);
+      break;
   }
   imprimir_operacion(valor1, valor2, signos[operacion_actual - 1], valor);
   imprimir(valor);
@@ -291,10 +315,14 @@ function igual() {
 
 function imprimir_operacion(v1, v2, operador, resultado) {
   if (operacion_actual != -1) {
-    $("#historial").append(
-      `<div class="historial_op"> ${v2} ${operador} ${v1} = ${resultado}  </div> 
-       <div class="historial_res"> ${resultado} </div>`
+    $("#historial").prepend(
+      `<p class="historial_op"> ${v2} ${operador} ${v1} = ${resultado}  </p> 
+       <p class="historial_res"> ${resultado} </p>`
     );
+    $("#pantalla-sup").html(
+      `<p> ${v2} ${operador} ${v1} = ${resultado}  </p> `
+    );
+
     operacion_actual = -1;
   }
 }
