@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link href="estilo/estilo.css" rel="stylesheet" />
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/codigo.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Calculadora científica</title>
+</head>
+
+<body>
+    <div class="d-flex flex-sm-row flex-column">
+        <div class="d-flex flex-column w-100">
+
+            <div class="p-2 w-200 mb-5">
+                <h2><i class="bi bi-list h3"></i> Científica</h2>
+                <div class="text-end mt-5" id="pantalla-sup"></div>
+                <div class="text-end mt-2 h1" id="pantalla">0</div>
+            </div>
+
+            <div class="p-2 w-100 ps-3 pe-3 numeros">
+                <div class="row">
+                    <div id="fluctua" class="col text-center m-1 p-2 btn gris">2<sup>nd</sup> </div>
+                    <div id="pi" class="col text-center m-1 p-2 btn gris">&#928;</div>
+                    <div id="e" class="col text-center m-1 p-2 btn gris">e</div>
+                    <div id="c" class="col text-center m-1 p-2 btn gris">C</div>
+                    <div id="atras" class="col text-center m-1 p-2 btn gris">&#10594;</div>
+                </div>
+
+                <div class="row ">
+                    <div id="x-cuadrado" class="col text-center m-1 p-2 btn gris">X<sup>2</sup> </div>
+                    <div id="1-partido-x" class="col text-center m-1 p-2 btn gris"><sup>1</sup>/<sub>x</sub></div>
+                    <div id="barra-x" class="col text-center m-1 p-2 btn gris">|x|</div>
+                    <div id="exp" class="col text-center m-1 p-2 btn gris">exp</div>
+                    <div id="mod" class="col text-center m-1 p-2 btn gris">mod</div>
+                </div>
+
+                <div class="row ">
+                    <div id="2-raiz-x" class="col text-center m-1 p-2 btn gris"><sup>2</sup>&#8730<sub>x</sub> </div>
+                    <div id="parentesis-1" class="col text-center m-1 p-2 btn gris">(</div>
+                    <div id="parentesis-2" class="col text-center m-1 p-2 btn gris">)</div>
+                    <div id="n" class="col text-center m-1 p-2 btn gris">n!</div>
+                    <div id="division" class="col text-center m-1 p-2 btn gris">&divide;</div>
+                </div>
+
+                <div class="row ">
+                    <div id="x-elevado-y" class="col text-center m-1 p-2 btn gris">x<sup>y</sup> </div>
+                    <div id="btn-7" class="col text-center m-1 p-2 bg-light btn">7</div>
+                    <div id="btn-8" class="col text-center m-1 p-2 bg-light btn">8</div>
+                    <div id="btn-9" class="col text-center m-1 p-2 bg-light btn">9</div>
+                    <div id="multiplicacion" class="col text-center m-1 p-2 btn gris">X</div>
+                </div>
+
+                <div class="row ">
+                    <div id="diez-elevado-x" class="col text-center m-1 p-2 btn gris">10<sup>x</sup> </div>
+                    <div id="btn-4" class="col text-center m-1 p-2 bg-light btn">4</div>
+                    <div id="btn-5" class="col text-center m-1 p-2 bg-light btn">5</div>
+                    <div id="btn-6" class="col text-center m-1 p-2 bg-light btn">6</div>
+                    <div id="resta" class="col text-center m-1 p-2 btn gris">-</div>
+                </div>
+
+                <div class="row ">
+                    <div id="log" class="col text-center m-1 p-2 btn gris">log </div>
+                    <div id="btn-1" class="col text-center m-1 p-2 bg-light btn">1</div>
+                    <div id="btn-2" class="col text-center m-1 p-2 bg-light btn">2</div>
+                    <div id="btn-3" class="col text-center m-1 p-2 bg-light btn">3</div>
+                    <div id="suma" class="col text-center m-1 p-2 btn gris">+</div>
+                </div>
+
+                <div class="row ">
+                    <div id="neperiano" class="col text-center m-1 p-2 btn gris">ln </div>
+                    <div id="mas-menos" class="col text-center m-1 p-2 bg-light btn"><sup>+</sup>/<sub>-</sub></div>
+                    <div id="btn-0" class="col text-center m-1 p-2 bg-light btn">0</div>
+                    <div id="punto" class="col text-center m-1 p-2 bg-light btn">,</div>
+                    <div id="igual" class="col text-center m-1 p-2 btn">=</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-2 ps-5 w-100" id="historial">
+            <h2>Historial</h2>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
