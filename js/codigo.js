@@ -439,7 +439,7 @@ window.onload = function () {
   });
 
   $("#atras").click(function () {
-    barra_ultimo();
+    borrar_ultimo();
   });
 
   $("#x-cuadrado").click(function () {
