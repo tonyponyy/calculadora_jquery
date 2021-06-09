@@ -6,4 +6,4 @@ Estructura y diseño - HTML, CSS, BOOTSTRAP
 Código - JAVASCRIPT, JQUERY
 
 Imágen de muestra del proyecto:
-<img src="https://github.com/tonyponyy/calculadora_jquery/blob/Tony/img/calculadora.PNG">
+<img src="https://github.com/tonyponyy/calculadora_jquery/blob/main/img/calculadora.PNG">
